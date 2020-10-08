@@ -1,0 +1,4 @@
+# Project exclude paths
+/stepslibrary-application/target/
+/stepslibrary-domain/target/
+/stepslibrary-webapp/target/
