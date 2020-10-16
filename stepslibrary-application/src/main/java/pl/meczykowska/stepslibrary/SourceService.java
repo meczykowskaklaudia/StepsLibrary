@@ -14,7 +14,7 @@ public class SourceService {
     @Autowired
     ISourceRepository repository;
 
-    public void saveSource(Source source) {
+    public void addSource(Source source) {
         repository.save(source);
     }
 

@@ -12,7 +12,7 @@ public class StepService {
     @Autowired
     IStepRepository repository;
 
-    public void saveStep(Step step){
+    public void addStep(Step step) {
         repository.save(step);
     }
 

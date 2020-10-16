@@ -1,15 +1,15 @@
 package pl.meczykowska.stepslibrary.controllers;
 
-import pl.meczykowska.stepslibrary.domain.Step;
-import pl.meczykowska.stepslibrary.dto.SourceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.meczykowska.stepslibrary.domain.Source;
 import pl.meczykowska.stepslibrary.SourceService;
 import pl.meczykowska.stepslibrary.StepService;
+import pl.meczykowska.stepslibrary.domain.Source;
+import pl.meczykowska.stepslibrary.domain.Step;
+import pl.meczykowska.stepslibrary.dto.SourceDTO;
 
 import javax.validation.Valid;
 
@@ -42,7 +42,7 @@ public class SourceController {
             return "addSource";
         } else {
              Source source = new Source(sourceDto.getUrl(),sourceDto.getComment(),stepService.findStepById(id));
-             sourceService.saveSource(source);
+            sourceService.addSource(source);
         }
         return "redirect:/step-{id}";
     }

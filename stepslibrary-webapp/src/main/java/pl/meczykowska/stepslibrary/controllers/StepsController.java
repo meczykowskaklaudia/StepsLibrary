@@ -1,6 +1,5 @@
 package pl.meczykowska.stepslibrary.controllers;
 
-import pl.meczykowska.stepslibrary.dto.StepDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,8 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.meczykowska.stepslibrary.SourceService;
-import pl.meczykowska.stepslibrary.domain.Step;
 import pl.meczykowska.stepslibrary.StepService;
+import pl.meczykowska.stepslibrary.domain.Step;
+import pl.meczykowska.stepslibrary.dto.StepDTO;
 
 import javax.validation.Valid;
 import java.text.ParseException;
@@ -51,7 +51,7 @@ public class StepsController {
             try {
                 Step step = new Step(stepDto.getName(), stepDto.getCreator(),
                         sdf.parse(stepDto.getCreationDate()), stepDto.getDifficultyLevel());
-                stepService.saveStep(step);
+                stepService.addStep(step);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
