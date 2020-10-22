@@ -1,15 +1,18 @@
 package pl.meczykowska.stepslibrary.dto;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.validation.constraints.NotEmpty;
 
 public class UserDTO {
 
     @NotEmpty
+    @Length(min = 3, max = 15)
     private String username;
 
     @NotEmpty
+    @Length(min = 3, max = 15)
     private String password;
-
 
     public String getUsername() {
         return username;

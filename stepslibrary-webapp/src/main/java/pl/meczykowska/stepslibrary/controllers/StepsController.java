@@ -4,14 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import pl.meczykowska.stepslibrary.SourceService;
-import pl.meczykowska.stepslibrary.StepService;
+import org.springframework.web.bind.annotation.*;
 import pl.meczykowska.stepslibrary.domain.Step;
 import pl.meczykowska.stepslibrary.dto.StepDTO;
+import pl.meczykowska.stepslibrary.services.SourceService;
+import pl.meczykowska.stepslibrary.services.StepService;
 
 import javax.validation.Valid;
 import java.text.ParseException;
@@ -31,10 +28,16 @@ public class StepsController {
         return new StepDTO();
     }
 
-    @RequestMapping("/library")
+    @RequestMapping(value = "/library", method = RequestMethod.GET)
     public String displaySteps(Model model) {
         model.addAttribute("steps", stepService.findAllSteps());
         return "library";
+    }
+
+    @RequestMapping(value = "/library", method = RequestMethod.POST)
+    public String deleteStep(@RequestParam(value = "delete") int id) {
+        stepService.deleteStepById(id);
+        return "redirect:/library";
     }
 
     @RequestMapping(value = "/add", method = RequestMethod.GET)
@@ -59,7 +62,7 @@ public class StepsController {
         }
     }
 
-    @RequestMapping("/step-{id}")
+    @RequestMapping(value = "/step-{id}", method = RequestMethod.GET)
     public String showDetails(@PathVariable int id, Model model) {
         Step step = stepService.findStepById(id);
         model.addAttribute("step", step);

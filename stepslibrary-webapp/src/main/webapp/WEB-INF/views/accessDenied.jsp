@@ -12,21 +12,8 @@
     </style>
 </head>
 <body>
-<c:if test="${not empty message}">
-    <div style="color:red"><em>${message}</em></div>
-</c:if>
-<em>To log in, fill in the information: </em>
-<form method="POST" action="login">
-    <label>Username:</label>
-    <input type="text" name="username"/>
-
-    <label>Password:</label>
-    <input type="text" name="password"/>
-
-    <input type="submit" value="Log in"/>
-</form>
-<br/>Don't have an account yet?<br/>
-<a href="<c:url value="register" />">Create a new account!</a><br/><br/>
+<base href="http://localhost:8080/stepslibrary/"/>
+<h2>Unauthorized Access!</h2>
 <a href="<c:url value="library" />">Go back to the library</a>
 </body>
 </html>

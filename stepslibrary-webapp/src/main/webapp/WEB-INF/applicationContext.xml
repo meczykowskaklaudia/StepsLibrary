@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xsi:schemaLocation="http://www.springframework.org/schema/mvc
+<beans xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc
 http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
@@ -8,16 +15,13 @@ http://www.springframework.org/schema/context/spring-context-4.0.xsd
 http://www.springframework.org/schema/tx
 http://www.springframework.org/schema/tx/spring-tx.xsd
 http://www.springframework.org/schema/data/jpa
-https://www.springframework.org/schema/data/jpa/spring-jpa.xsd"
-       xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns="http://www.springframework.org/schema/beans"
-       xmlns:tx="http://www.springframework.org/schema/tx"
-       xmlns:jpa="http://www.springframework.org/schema/data/jpa">
+https://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+http://www.springframework.org/schema/security
+http://www.springframework.org/schema/security/spring-security-5.4.xsd">
     <context:component-scan base-package="pl.meczykowska"/>
     <context:annotation-config/>
     <mvc:annotation-driven/>
+    <security:global-method-security secured-annotations="enabled" pre-post-annotations="enabled"/>
     <tx:annotation-driven/>
     <jpa:repositories base-package="pl.meczykowska"/>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

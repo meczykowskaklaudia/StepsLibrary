@@ -17,10 +17,11 @@ The application is still in a development phase.
 
 - IntelliJ IDEA
 - Maven
-- JDBC
-- JSTL
 - Apache Tomcat
 - Spring Framework
+- JDBC
 - MySQL
+- Hibernate
+- JSTL
 - Github
 

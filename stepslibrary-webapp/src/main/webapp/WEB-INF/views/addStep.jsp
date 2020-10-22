@@ -8,37 +8,27 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>Dancehall steps library</title>
+    <style>
+        <%@include file="../css/style.css" %>
+    </style>
 </head>
 <body>
+<em>Please, fill in the information: </em>
 <form:form method="POST" modelAttribute="stepDto">
-    <em>Please, fill in the information: </em>
-    <table>
-        <tbody>
-        <tr>
-            <td>Name:</td>
-            <td><form:input type="text" path="name"/><c:if test="${pageContext.request.method=='POST'}"><form:errors
-                    path="name"/></c:if></td>
-        </tr>
-        <tr>
-            <td>Creator:</td>
-            <td><form:input type="text" path="creator"/><c:if test="${pageContext.request.method=='POST'}"><form:errors
-                    path="creator"/></c:if></td>
-        </tr>
-        <tr>
-            <td>Date of creation:</td>
-            <td><form:input type="text" path="creationDate"/><c:if
-                    test="${pageContext.request.method=='POST'}"><form:errors path="creationDate"/></c:if></td>
-        </tr>
-        <tr>
-            <td>Difficulty level:</td>
-            <td><form:input type="text" path="difficultyLevel"/><c:if
-                    test="${pageContext.request.method=='POST'}"><form:errors path="difficultyLevel"/></c:if></td>
-        </tr>
-        </tbody>
-    </table>
+    <label>Name:</label>
+    <form:input type="text" path="name"/><c:if test="${pageContext.request.method=='POST'}"><form:errors
+        path="name"/></c:if>
+    <label>Creator:</label>
+    <form:input type="text" path="creator"/><c:if test="${pageContext.request.method=='POST'}"><form:errors
+        path="creator"/></c:if>
+    <label>Date of creation:</label>
+    <form:input type="text" path="creationDate"/><c:if
+        test="${pageContext.request.method=='POST'}"><form:errors path="creationDate"/></c:if>
+    <label>Difficulty level:</label>
+    <form:input type="text" path="difficultyLevel"/><c:if
+        test="${pageContext.request.method=='POST'}"><form:errors path="difficultyLevel"/></c:if>
     <input type="submit" value="Add!"/>
-</form:form>
-<br/>
+</form:form><br/>
 <a href="<c:url value="library" />">Go back to the library</a>
 </body>
 </html>

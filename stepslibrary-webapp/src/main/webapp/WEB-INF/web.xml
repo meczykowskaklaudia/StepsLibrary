@@ -51,6 +51,15 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
         <param-value>/WEB-INF/securityContext.xml</param-value>
     </context-param>
 
+    <error-page>
+        <error-code>400</error-code>
+        <location>/WEB-INF/views/accessDenied.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/WEB-INF/views/accessDenied.jsp</location>
+    </error-page>
+
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>

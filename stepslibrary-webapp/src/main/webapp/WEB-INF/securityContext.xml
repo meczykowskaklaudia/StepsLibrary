@@ -30,9 +30,12 @@
         </beans:property>
     </beans:bean>
     <http>
+        <intercept-url pattern="/" access="permitAll()"/>
+        <intercept-url pattern="/library" access="permitAll()"/>
         <intercept-url pattern="/login*" access="isAnonymous()"/>
+        <intercept-url pattern="/register*" access="isAnonymous()"/>
         <intercept-url pattern="/**" access="isAuthenticated()"/>
-        <form-login login-page="/login"
+        <form-login login-page="/login?required=true"
                     default-target-url="/library"
                     authentication-failure-url="/login?error=true"/>
         <logout logout-success-url="/login?logout=true"/>

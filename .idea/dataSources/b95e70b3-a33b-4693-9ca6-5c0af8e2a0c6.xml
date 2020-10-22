@@ -5043,162 +5043,142 @@
 privilege_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="1213" parent="413" name="FK2rfl694fu6ls2f2mqcxesqc6p">
+    <foreign-key id="1213" parent="413" name="role_id_fk">
       <ColNames>role_id</ColNames>
       <RefTableName>role</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1214" parent="413" name="role_id_fk">
-      <ColNames>role_id</ColNames>
-      <RefTableName>role</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="1215" parent="413" name="FKp0x1d9k5aksyqd1akwwfkh0ki">
+    <foreign-key id="1214" parent="413" name="privilege_id_fk">
       <ColNames>privilege_id</ColNames>
       <RefTableName>privilege</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1216" parent="413" name="privilege_id_fk">
-      <ColNames>privilege_id</ColNames>
-      <RefTableName>privilege</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="1217" parent="414" name="id">
+    <column id="1215" parent="414" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1218" parent="414" name="url">
+    <column id="1216" parent="414" name="url">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1219" parent="414" name="comment">
+    <column id="1217" parent="414" name="comment">
       <Position>3</Position>
       <DataType>text|0s</DataType>
     </column>
-    <column id="1220" parent="414" name="step_id">
+    <column id="1218" parent="414" name="step_id">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1221" parent="414" name="fk_step_id">
+    <index id="1219" parent="414" name="fk_step_id">
       <ColNames>step_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1222" parent="414" name="PRIMARY">
+    <key id="1220" parent="414" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="1223" parent="414" name="FK2dp9m27hn83ctf9lh64wj0ilf">
+    <foreign-key id="1221" parent="414" name="FK2dp9m27hn83ctf9lh64wj0ilf">
       <ColNames>step_id</ColNames>
       <RefTableName>step</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1224" parent="414" name="source_ibfk_1">
+    <foreign-key id="1222" parent="414" name="source_ibfk_1">
       <ColNames>step_id</ColNames>
       <RefTableName>step</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="1225" parent="415" name="id">
+    <column id="1223" parent="415" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1226" parent="415" name="name">
+    <column id="1224" parent="415" name="name">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1227" parent="415" name="creator">
+    <column id="1225" parent="415" name="creator">
       <Position>3</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1228" parent="415" name="creationDate">
+    <column id="1226" parent="415" name="creationDate">
       <Position>4</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1229" parent="415" name="difficultyLevel">
+    <column id="1227" parent="415" name="difficultyLevel">
       <Position>5</Position>
       <DataType>double|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="1230" parent="415" name="PRIMARY">
+    <key id="1228" parent="415" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="1231" parent="416" name="id">
+    <column id="1229" parent="416" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="1232" parent="416" name="username">
+    <column id="1230" parent="416" name="username">
       <Position>2</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1233" parent="416" name="password">
+    <column id="1231" parent="416" name="password">
       <Position>3</Position>
       <DataType>text|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1234" parent="416" name="enabled">
+    <column id="1232" parent="416" name="enabled">
       <Position>4</Position>
       <DataType>tinyint(1)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="1235" parent="416" name="PRIMARY">
+    <key id="1233" parent="416" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="1236" parent="417" name="user_id">
+    <column id="1234" parent="417" name="user_id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="1237" parent="417" name="role_id">
+    <column id="1235" parent="417" name="role_id">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="1238" parent="417" name="user_id">
+    <index id="1236" parent="417" name="user_id">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="1239" parent="417" name="role_id">
+    <index id="1237" parent="417" name="role_id">
       <ColNames>role_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="1240" parent="417" name="PRIMARY">
+    <key id="1238" parent="417" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>user_id
 role_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="1241" parent="417" name="FKctppustglf1yna87f9yqw1qpr">
+    <foreign-key id="1239" parent="417" name="user_id_fk">
       <ColNames>user_id</ColNames>
       <RefTableName>user</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="1242" parent="417" name="user_id_fk">
-      <ColNames>user_id</ColNames>
-      <RefTableName>user</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="1243" parent="417" name="FKa9r8g5hiyy57ts5u4tkf0lbab">
-      <ColNames>role_id</ColNames>
-      <RefTableName>role</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="1244" parent="417" name="user_role_id_fk">
+    <foreign-key id="1240" parent="417" name="user_role_id_fk">
       <ColNames>role_id</ColNames>
       <RefTableName>role</RefTableName>
       <RefColNames>id</RefColNames>

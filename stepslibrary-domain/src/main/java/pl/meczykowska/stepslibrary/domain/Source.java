@@ -1,22 +1,19 @@
 package pl.meczykowska.stepslibrary.domain;
 
-import com.sun.istack.NotNull;
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.net.URL;
 
 @Entity
 public class Source {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     URL url;
     String comment;
     @ManyToOne
     Step step;
 
-    public Source (URL url, String comment, Step step){
+    public Source(URL url, String comment, Step step) {
         this.url = url;
         this.comment = comment;
         this.step = step;

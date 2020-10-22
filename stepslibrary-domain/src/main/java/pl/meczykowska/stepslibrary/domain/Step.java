@@ -1,25 +1,20 @@
 package pl.meczykowska.stepslibrary.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
 public class Step {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     String name;
     String creator;
     Date creationDate;
     Double difficultyLevel;
-
-    public Step(int id, String name, String creator, Date creationDate, Double difficultyLevel){
-        this.id=  id;
-        this.name = name;
-        this.creator = creator;
-        this.creationDate = creationDate;
-        this.difficultyLevel = difficultyLevel;
-    }
 
     public Step(String name, String creator, Date creationDate, Double difficultyLevel){
         this.name = name;
