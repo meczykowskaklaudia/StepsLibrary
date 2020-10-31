@@ -11,7 +11,7 @@ This is a simple Java web app that is built to learn the basics of developing su
 
 ## Project status
 
-The application is still in a development phase.
+I might improve the app and add more functionalities in the future.
 
 ## Tools used
 
@@ -23,5 +23,6 @@ The application is still in a development phase.
 - MySQL
 - Hibernate
 - JSTL
+- Bootstrap
 - Github
 

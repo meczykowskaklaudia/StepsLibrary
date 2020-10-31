@@ -5,30 +5,44 @@
 <!DOCTYPE HTML>
 <html lang="pl">
 <head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>Dancehall steps library</title>
-    <style>
-        <%@include file="../css/style.css" %>
-    </style>
 </head>
-<body>
-<em>Please, fill in the information: </em>
+<body style="max-width: 600px; margin: auto;">
+<h4>Please, fill in the information: </h4>
 <form:form method="POST" modelAttribute="stepDto">
-    <label>Name:</label>
-    <form:input type="text" path="name"/><c:if test="${pageContext.request.method=='POST'}"><form:errors
-        path="name"/></c:if>
-    <label>Creator:</label>
-    <form:input type="text" path="creator"/><c:if test="${pageContext.request.method=='POST'}"><form:errors
-        path="creator"/></c:if>
-    <label>Date of creation:</label>
-    <form:input type="text" path="creationDate"/><c:if
-        test="${pageContext.request.method=='POST'}"><form:errors path="creationDate"/></c:if>
-    <label>Difficulty level:</label>
-    <form:input type="text" path="difficultyLevel"/><c:if
-        test="${pageContext.request.method=='POST'}"><form:errors path="difficultyLevel"/></c:if>
-    <input type="submit" value="Add!"/>
+    <div class="form-group">
+        <label for="name">Name: </label>
+        <form:input type="text" class="form-control" placeholder="Name" path="name"/><c:if
+            test="${pageContext.request.method=='POST'}"><form:errors
+            path="name"/></c:if>
+    </div>
+    <div class="form-group">
+        <label for="creator">Creator:</label>
+        <form:input type="text" class="form-control" placeholder="Creator" path="creator"/><c:if
+            test="${pageContext.request.method=='POST'}"><form:errors
+            path="creator"/></c:if>
+    </div>
+    <div class="form-group">
+        <label for="creationDate">Date of creation:</label>
+        <form:input type="date" class="form-control" placeholder="Creation date" path="creationDate"/><c:if
+            test="${pageContext.request.method=='POST'}"><form:errors path="creationDate"/></c:if>
+    </div>
+    <div class="form-group">
+        <label for="difficultyLevel">Difficulty level:</label>
+        <form:input type="number" class="form-control" placeholder="Difficulty level" path="difficultyLevel"/><c:if
+            test="${pageContext.request.method=='POST'}"><form:errors path="difficultyLevel"/></c:if>
+    </div>
+    <button type="submit" class="btn btn-outline-primary">Add!</button>
 </form:form><br/>
-<a href="<c:url value="library" />">Go back to the library</a>
+<a class="btn btn-outline-primary btn-sm" href="<c:url value="library" />" role="button">Go back to the library</a>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
 </body>
 </html>
