@@ -37,8 +37,11 @@ public class SourceController {
     }
 
     @RequestMapping(value = "/step-{id}/add-source", method = RequestMethod.POST)
-    public String sendSource(@PathVariable int id, @ModelAttribute("sourceDto") @Valid SourceDTO sourceDto, BindingResult result) {
+    public String sendSource(@PathVariable int id, Model model, @ModelAttribute("sourceDto") @Valid SourceDTO sourceDto, BindingResult result) {
         if (result.hasErrors()) {
+            Step step = stepService.findStepById(id);
+            model.addAttribute("step", step);
+            model.addAttribute("sources", sourceService.findAllSourcesByStep(step));
             return "addSource";
         } else {
             Source source = new Source(sourceDto.getUrl(), sourceDto.getComment(), stepService.findStepById(id));

@@ -32,7 +32,8 @@
     </div>
     <div class="form-group">
         <label for="difficultyLevel">Difficulty level:</label>
-        <form:input type="number" class="form-control" placeholder="Difficulty level" path="difficultyLevel"/><c:if
+        <form:input type="number" step="0.1" min="0" max="10" class="form-control" placeholder="Difficulty level"
+                    path="difficultyLevel"/><c:if
             test="${pageContext.request.method=='POST'}"><form:errors path="difficultyLevel"/></c:if>
     </div>
     <button type="submit" class="btn btn-outline-primary">Add!</button>

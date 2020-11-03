@@ -17,7 +17,10 @@
     <h3>Hello <sec:authentication property="principal.username"/>!<a style="float: right;"
                                                                      class="btn btn-outline-primary btn-sm"
                                                                      href="<c:url value="logout" />" role="button">Log
-        out</a></h3>
+        out</a><a style="float: right;"
+                  class="btn btn-outline-primary btn-sm"
+                  href="<c:url value="deleteAccount" />" onClick="return confirm('Sure?')" role="button">Delete
+        account</a></h3>
 </sec:authorize>
 
 <h4>Welcome to the dancehall steps library!</h4><br/>

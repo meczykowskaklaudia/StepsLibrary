@@ -10,8 +10,11 @@
     <title>Dancehall steps library</title>
 </head>
 <body style="max-width: 600px; margin: auto;">
-<c:if test="${not empty message}">
-    <div class="alert alert-dark" role="alert">${message}</div>
+<c:if test="${not empty errorMessage}">
+    <div class="alert alert-danger" role="alert">${errorMessage}</div>
+</c:if>
+<c:if test="${not empty successMessage}">
+    <div class="alert alert-success" role="alert">${successMessage}</div>
 </c:if>
 <h4>Log in:</h4>
 <form method="POST" action="login">

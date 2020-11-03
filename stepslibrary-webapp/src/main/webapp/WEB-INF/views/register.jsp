@@ -11,6 +11,9 @@
     <title>Dancehall steps library</title>
 </head>
 <body style="max-width: 600px; margin: auto;">
+<c:if test="${not empty message}">
+    <div class="alert alert-danger" role="alert">${message}</div>
+</c:if>
 <h3>Creating a new account!</h3>
 <h4>Please, fill in the information: </h4>
 <form:form method="POST" modelAttribute="userDto">
@@ -22,7 +25,7 @@
     </div>
     <div class="form-group">
         <label for="Password">Password: </label>
-        <form:input type="text" class="form-control" placeholder="Password" path="password"/><c:if
+        <form:input type="password" class="form-control" placeholder="Password" path="password"/><c:if
             test="${pageContext.request.method=='POST'}"><form:errors
             path="password"/></c:if><br/>
     </div>

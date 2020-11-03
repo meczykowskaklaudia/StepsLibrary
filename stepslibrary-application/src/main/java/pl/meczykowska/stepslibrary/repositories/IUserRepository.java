@@ -10,4 +10,6 @@ public interface IUserRepository extends CrudRepository<User, Integer> {
     User save(User user);
 
     User findByUsername(String username);
+
+    void deleteUserByUsername(String username);
 }

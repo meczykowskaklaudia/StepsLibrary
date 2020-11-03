@@ -33,4 +33,13 @@ public class UserService implements UserDetailsService {
         }
         return user;
     }
+
+    public void deleteUser(String username) {
+        repository.deleteUserByUsername(username);
+    }
+
+    public boolean isUsernameAvailable(String username) {
+        User user = repository.findByUsername(username);
+        return user == null;
+    }
 }
